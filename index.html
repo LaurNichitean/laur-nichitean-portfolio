@@ -1,48 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Laurentiu Nichitean - Angular / Front-End Developer</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400italic,100,300,300italic,400'>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic'>
+    <meta charset="UTF-8" />
+    <title>
+      Laurentiu Nichitean - 💎 Senior React Developer • Independent Contractor •
+      Freelancer | I deliver value through expertly crafted web applications for
+      worldwide online businesses.
+    </title>
+    <link rel="stylesheet" href="styles/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="//ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Roboto:400italic,100,300,300italic,400"
+    />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Roboto+Condensed:400italic"
+    />
+    <meta
+      name="description"
+      content="👋 I am a Senior React Developer / Independent Contractor / Freelancer with more than
+  10 years of experience in software development, specialized in front-end technologies – React.js, JavaScript, TypeScript."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="initial-scale=1" />
-    <base href="/"/>
   </head>
   <body ng-app="ln">
-      <div class="app-container" layout="column">
-        <header>
-          <section class="header-content" layout="row" layout-align="space-between center">
-            <div class="logo" ><a href="/">laur nichitean</a> <span class="logo-caption">front-end wizard</span></div>
-            <nav layout="row" flex="30" layout-align="space-around center">
-              <a href="/about">about</a>
-              <a href="/portfolio">portfolio</a>
-              <a href="/contact">contact</a>
-            </nav>
-          </section>
-        </header>
-
-        <div ng-view class="view-container"></div>
-
-        <footer>
-          <section class="footer-content" layout="row" layout-align="space-between center">
-            <div class="copyright">&copy; 2015 <a href="/">Laur Nichitean</a></div>
-            <div class="footer-nav" layout="row" flex="30" layout-align="space-around center">
-              <a href="/about">about</a>
-              <a href="/portfolio">portfolio</a>
-              <a href="/contact">contact</a>
+    <div
+      class="app-container"
+      layout="column"
+      ng-controller="AppCtrl"
+      ng-class="{'homepage': appFactory.isHomepage}"
+    >
+      <header>
+        <section
+          class="header-content"
+          layout="row"
+          layout-align="space-between center"
+        >
+          <div class="logo">
+            <a href="/"
+              ><div class="logo-image"></div>
+              <span class="logo-name">Laurentiu Nichitean</span></a
+            >
+            <h1 class="logo-caption">Senior React Developer</h1>
+          </div>
+          <md-button
+            class="md-icon-button md-button md-primary"
+            hide-gt-sm
+            ng-click="toggleRight()"
+            aria-label="menu toggle"
+            ><md-icon
+              md-svg-src="images/icons/ic_menu_24px.svg"
+            ></md-icon></md-button
+          ><md-sidenav
+            class="site-sidenav md-sidenav-right md-whiteframe-z2 md-closed"
+            md-component-id="right"
+            md-is-locked-open="$mdMedia('gt-sm')"
+            tabindex="-1"
+            hide-gt-sm
+            ><ul class="mobile-nav-menu menu-nested-list">
+              <li>
+                <a href="/" class="md-button" ng-click="toggleRight()">home</a>
+              </li>
+              <li>
+                <a href="#about" class="md-button" ng-click="toggleRight()"
+                  >about</a
+                >
+              </li>
+              <li>
+                <a href="#skills" class="md-button" ng-click="toggleRight()"
+                  >skills</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="md-button" ng-click="toggleRight()"
+                  >contact</a
+                >
+              </li>
+            </ul></md-sidenav
+          >
+          <div
+            class="socialize-with-me"
+            layout="row"
+            layout-align="center center"
+            hide-sm
+          >
+            <ul class="social-icons">
+              <li>
+                <a
+                  href="https://ro.linkedin.com/in/laurnichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/white/linkedin.png"
+                    alt="linkedin social icon"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/laurnichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/white/GitHub-Mark-Light-32px.png"
+                    alt="github social icon"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/laur.nichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/white/facebook.png"
+                    alt="facebook social icon"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/laurnichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/white/twitter.png"
+                    alt="twitter social icon"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <nav
+            layout="row"
+            flex="30"
+            layout-align="space-around center"
+            hide-sm
+          >
+            <a href="#about">about</a> <a href="#skills">skills</a>
+            <a href="#contact">contact</a>
+          </nav>
+        </section>
+      </header>
+      <div class="view-container">
+        <div id="about" class="about-page">
+          <h2 class="heading">about me</h2>
+          <div
+            class="about-me-container"
+            layout="row"
+            layout-sm="column"
+            layout-align="space-between center"
+          >
+            <div class="about-me-photo" layout="column" flex="20"></div>
+            <div class="about-me-description" layout="column">
+              <h2 class="about-me-title">
+                👋 Hello there! I am a Senior React Developer from Codlea,
+                Romania.
+              </h2>
+              I have more than 10 years of experience in software development,
+              specialized in front-end technologies – React.js, JavaScript,
+              TypeScript but in the last 2+ years I have also worked as a
+              back-end developer using Java with Adobe Experience Manager and
+              Go. My main area of expertise and preferred tech stack is
+              front-end, but I enjoy developing back-end solutions as well. I am
+              always looking forward to new challenges and opportunities for
+              self-improvement, both professionally and personally.<br /><br />💻
+              Currently I am only interested in remote work.<br /><br />
+              <div>
+                🤝 Let’s <a href="#contact" class="link">connect</a> to
+                establish how I can help your organization!
+              </div>
             </div>
-          </section>
-        </footer>
+          </div>
+          <h2 id="companies" class="heading">collaborations</h2>
+          <div
+            class="companies"
+            layout="row"
+            layout-sm="column"
+            layout-align="center center"
+          >
+            <img
+              src="images/logos/ibm-small.png"
+              width="150"
+              height="81"
+              alt="IBM"
+            />
+            <img
+              src="images/logos/bmw-small.png"
+              width="80"
+              height="80"
+              alt="BMW"
+            />
+            <img
+              src="images/logos/akamai-small.png"
+              width="150"
+              height="63"
+              alt="Akamai"
+            />
+            <img
+              src="images/logos/izotope-small.png"
+              width="180"
+              height="81"
+              alt="Izotope"
+            />
+          </div>
+          <h2 id="skills" class="heading">skills</h2>
+          <div class="skills" layout="row" layout-sm="column">
+            <div
+              layout="column"
+              flex
+              layout-align-sm="start start"
+              layout-align="start center"
+            >
+              <div class="container">
+                <h3>Front-end skills:</h3>
+                <ul>
+                  <li>React.js, Angular, AngularJS</li>
+                  <li>
+                    JavaScript, TypeScript, JSX, ES6+, jQuery, HTML5, CSS3,
+                    Sass, Less
+                  </li>
+                  <li>Webpack, Yarn, npm</li>
+                  <li>
+                    Email development for all major email clients and platforms
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              layout="column"
+              flex
+              layout-align-sm="start start"
+              layout-align="start center"
+            >
+              <div class="container">
+                <h3>Back-end skills:</h3>
+                <ul>
+                  <li>Adobe Experience Manager</li>
+                  <li>Java</li>
+                  <li>Go (Golang)</li>
+                  <li>RESTful API</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              layout="column"
+              flex
+              layout-align-sm="start start"
+              layout-align="start center"
+            >
+              <div class="container">
+                <h3>DevOps skills:</h3>
+                <ul>
+                  <li>Unix/Linux</li>
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="contact" class="contact-page">
+          <h2 class="heading">contact</h2>
+          <div class="contact-page-container" layout="column">
+            <div class="drop-me-a-line"><h2>Drop me a line</h2></div>
+            <div class="contact-form" flex>
+              <form action="https://formspree.io/f/mleqkakd" method="POST">
+                <label> Your email:
+                  <input type="email" name="email" />
+                </label>
+                <label> Your message:
+                  <textarea name="message"></textarea>
+                </label>
+                <!-- honeypot spam filtering -->
+                <input type="text" name="_gotcha" style="display:none" />
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    <!-- Angular Material Dependencies -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
-    <script src="src/app.js"></script>
+      <footer>
+        <section
+          class="footer-content"
+          layout="row"
+          layout-align="space-between center"
+        >
+          <div class="copyright" hide-sm>
+            &copy; {{ date | date: 'yyyy' }} <a href="/">Laurentiu Nichitean</a>
+          </div>
+          <div
+            class="socialize-with-me"
+            layout="row"
+            layout-align="center center"
+          >
+            <div>Let's socialize:</div>
+            <ul class="social-icons">
+              <li>
+                <a
+                  href="https://ro.linkedin.com/in/laurnichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/linkedin.png"
+                    alt="linkedin social icon"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/laurnichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/GitHub-Mark-32px.png"
+                    alt="github social icon"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/laur.nichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="facebook social icon"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/laurnichitean"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="images/icons/twitter.png"
+                    alt="twitter social icon"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </footer>
+    </div>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-63054229-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "UA-63054229-1");
+    </script>
   </body>
 </html>

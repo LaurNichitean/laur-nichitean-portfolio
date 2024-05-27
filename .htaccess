@@ -1,0 +1,8 @@
+
+RewriteEngine on
+
+RewriteOptions inherit
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^www\.laurnichitean\.com$
+RewriteRule ^/?$ "https\:\/\/laurnichitean\.com\/" [R=301,L]

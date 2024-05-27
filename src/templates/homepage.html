@@ -1,3 +1,18 @@
 <div class="home-page">
-  <h1>Homepage</h1>
+  <h1>selected work</h1>
+
+  <div class="carousel-section" layout="row" layout-align="center start">
+    <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in slides" active="slide.active">
+        <a href="#portfolio">
+          <img ng-src="{{slide.image}}" alt="{{slide.text}}" style="margin:auto;">
+        </a>
+
+        <div class="carousel-caption">
+          <p>{{slide.text}}</p>
+        </div>
+      </uib-slide>
+    </uib-carousel>
+
+  </div>
 </div>
