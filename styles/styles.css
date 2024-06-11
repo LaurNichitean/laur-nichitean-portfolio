@@ -379,6 +379,10 @@ ul.social-icons {
   opacity: .7;
 }
 
+.social-icons > li img {
+  width: 32px;
+}
+
 .contact-page {
   margin-bottom: 30px;
 }
