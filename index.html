@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      Laurentiu Nichitean - 💎 Senior React Developer • Independent Contractor •
+      Laurentiu Nichitean - Senior React Developer • Independent Contractor •
       Freelancer | I deliver value through expertly crafted web applications for
       worldwide online businesses.
     </title>
@@ -273,15 +273,21 @@
             <div class="drop-me-a-line"><h2>Drop me a line</h2></div>
             <div class="contact-form" flex>
               <form action="https://formspree.io/f/mleqkakd" method="POST">
-                <label> Your email:
-                  <input type="email" name="email" />
-                </label>
-                <label> Your message:
-                  <textarea name="message"></textarea>
-                </label>
-                <!-- honeypot spam filtering -->
-                <input type="text" name="_gotcha" style="display:none" />
-                <button type="submit">Send</button>
+                <span class="left-side">
+                  <label>
+                    <span class="label-text">Your email:</span>
+                    <input type="email" name="email" />
+                  </label>
+                </span>
+                <span class="right-side">
+                  <label>
+                    <span class="label-text">Your message:</span>
+                    <textarea name="message"></textarea>
+                  </label>
+                  <!-- honeypot spam filtering -->
+                  <input type="text" name="_gotcha" style="display: none" />
+                  <button type="submit">Send</button>
+                </span>
               </form>
             </div>
           </div>
