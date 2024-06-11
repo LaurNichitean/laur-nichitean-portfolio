@@ -175,9 +175,11 @@ header {
 .contact-form .label-text {
   min-width: auto;
   display: inline-block;
+  width: auto;
 
   @media screen and (max-width: 1024px) {
     min-width: 120px;
+    width: 100%;
   }
 }
 
